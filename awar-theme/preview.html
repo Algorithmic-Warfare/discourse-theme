@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWAR Discourse Theme Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --awar-black: #000000;
+      --awar-dark: #0a0a0a;
+      --awar-dark-elevated: #111111;
+      --awar-dark-surface: #1a1a1a;
+      --awar-orange: #ff9944;
+      --awar-orange-dim: #cc7733;
+      --awar-burgundy: #773333;
+      --awar-burgundy-hover: #994444;
+      --awar-white: #ffffff;
+      --awar-white-muted: rgba(255, 255, 255, 0.5);
+      --awar-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: var(--awar-black);
+      color: var(--awar-white);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--awar-black);
+      border-bottom: 1px solid var(--awar-border);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--awar-white);
+    }
+
+    .tagline {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--awar-white-muted);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .header-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--awar-white);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .header-icon:hover {
+      background-color: var(--awar-dark-surface);
+      color: var(--awar-orange);
+    }
+
+    /* Banner */
+    .banner {
+      background: linear-gradient(90deg, #773333 0%, #000000 100%);
+      border-bottom: 1px solid rgba(255, 153, 68, 0.3);
+      padding: 10px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .banner-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+    }
+
+    .banner-link {
+      color: var(--awar-orange);
+      font-size: 12px;
+      text-decoration: none;
+      padding: 4px 12px;
+      border: 1px solid var(--awar-orange);
+      transition: all 0.2s;
+    }
+
+    .banner-link:hover {
+      background-color: var(--awar-orange);
+      color: var(--awar-black);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Navigation */
+    .nav-pills {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--awar-border);
+    }
+
+    .nav-pill {
+      padding: 8px 16px;
+      color: var(--awar-white-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+      font-size: 14px;
+    }
+
+    .nav-pill:hover {
+      background-color: var(--awar-dark-surface);
+      color: var(--awar-orange);
+    }
+
+    .nav-pill.active {
+      background-color: var(--awar-burgundy);
+      color: var(--awar-white);
+    }
+
+    /* Topic List */
+    .topic-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .topic-list th {
+      text-align: left;
+      padding: 10px 15px;
+      color: var(--awar-white-muted);
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--awar-border);
+    }
+
+    .topic-list td {
+      padding: 15px;
+      border-bottom: 1px solid var(--awar-border);
+    }
+
+    .topic-list tr:hover td {
+      background-color: var(--awar-dark-elevated);
+    }
+
+    .topic-title {
+      color: var(--awar-white);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .topic-title:hover {
+      color: var(--awar-orange);
+    }
+
+    .topic-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+    }
+
+    .category-badge::before {
+      content: "「";
+      color: var(--awar-orange);
+    }
+
+    .category-badge::after {
+      content: "」";
+      color: var(--awar-orange);
+    }
+
+    .tag {
+      font-size: 11px;
+      color: var(--awar-orange-dim);
+      padding: 2px 8px;
+      border: 1px solid var(--awar-border);
+    }
+
+    .tag:hover {
+      color: var(--awar-orange);
+      border-color: var(--awar-orange);
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      background-color: var(--awar-burgundy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .posters {
+      display: flex;
+      gap: -5px;
+    }
+
+    .activity {
+      color: var(--awar-white-muted);
+      font-size: 13px;
+    }
+
+    /* Buttons */
+    .buttons-demo {
+      display: flex;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--awar-burgundy);
+      color: var(--awar-white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--awar-burgundy-hover);
+    }
+
+    .btn-default {
+      background-color: var(--awar-dark-surface);
+      color: var(--awar-white);
+      border: 1px solid var(--awar-border);
+    }
+
+    .btn-default:hover {
+      background-color: var(--awar-dark-elevated);
+      color: var(--awar-orange);
+      border-color: var(--awar-orange);
+    }
+
+    /* Topic View */
+    .topic-view {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--awar-border);
+    }
+
+    .topic-header {
+      margin-bottom: 20px;
+    }
+
+    .topic-header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .post {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-left: 2px solid var(--awar-orange);
+      padding-left: 20px;
+      margin-left: 10px;
+    }
+
+    .post-avatar {
+      width: 45px;
+      height: 45px;
+      background-color: var(--awar-burgundy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .post-content {
+      flex: 1;
+    }
+
+    .post-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .username {
+      color: var(--awar-orange);
+      font-weight: 600;
+    }
+
+    .post-date {
+      color: var(--awar-white-muted);
+      font-size: 12px;
+    }
+
+    .post-body {
+      color: var(--awar-white);
+      line-height: 1.7;
+    }
+
+    .post-body p {
+      margin-bottom: 15px;
+    }
+
+    .post-body code {
+      background-color: var(--awar-dark-surface);
+      color: var(--awar-orange);
+      padding: 2px 6px;
+      border: 1px solid var(--awar-border);
+      font-size: 13px;
+    }
+
+    .post-body pre {
+      background-color: var(--awar-dark-elevated);
+      border: 1px solid var(--awar-border);
+      padding: 15px;
+      margin: 15px 0;
+      overflow-x: auto;
+    }
+
+    .post-body pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--awar-white);
+    }
+
+    .post-body blockquote {
+      background-color: var(--awar-dark-elevated);
+      border-left: 3px solid var(--awar-orange);
+      padding: 10px 15px;
+      margin: 15px 0;
+      color: var(--awar-white-muted);
+    }
+
+    .post-body a {
+      color: var(--awar-orange);
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .post-action {
+      color: var(--awar-white-muted);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .post-action:hover {
+      color: var(--awar-orange);
+    }
+
+    /* Form Elements */
+    .form-demo {
+      margin: 30px 0;
+      padding: 20px;
+      background-color: var(--awar-dark-elevated);
+      border: 1px solid var(--awar-border);
+    }
+
+    .form-demo h3 {
+      margin-bottom: 15px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-row {
+      margin-bottom: 15px;
+    }
+
+    .form-row label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--awar-white-muted);
+      font-size: 12px;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      background-color: var(--awar-dark-surface);
+      color: var(--awar-white);
+      border: 1px solid var(--awar-border);
+      padding: 10px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: var(--awar-orange);
+      box-shadow: 0 0 0 1px var(--awar-orange);
+    }
+
+    .form-row textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--awar-black);
+      border-top: 1px solid var(--awar-border);
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-logo {
+      color: var(--awar-orange);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-tagline {
+      color: var(--awar-white-muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--awar-orange);
+    }
+
+    .footer-divider {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 8px;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--awar-white-muted);
+      margin: 30px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--awar-border);
+    }
+
+    /* Alert */
+    .alert {
+      padding: 15px 20px;
+      margin: 20px 0;
+      border: 1px solid var(--awar-border);
+    }
+
+    .alert-info {
+      background-color: var(--awar-dark-elevated);
+      border-left: 3px solid var(--awar-orange);
+    }
+
+    .alert-success {
+      background-color: rgba(68, 204, 102, 0.1);
+      border-left: 3px solid #44cc66;
+    }
+
+    .alert-warning {
+      background-color: rgba(255, 153, 68, 0.1);
+      border-left: 3px solid var(--awar-orange);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--awar-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--awar-dark-surface);
+      border: 1px solid var(--awar-border);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--awar-burgundy);
+    }
+
+    ::selection {
+      background-color: var(--awar-burgundy);
+      color: var(--awar-white);
+    }
+
+    /* Color Swatches */
+    .color-swatches {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .swatch {
+      text-align: center;
+    }
+
+    .swatch-color {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 5px;
+      border: 1px solid var(--awar-border);
+    }
+
+    .swatch-label {
+      font-size: 10px;
+      color: var(--awar-white-muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">Algorithmic Warfare</div>
+      <span class="tagline">「 ALGORITHMIC WARFARE 」</span>
+    </div>
+    <div class="header-icons">
+      <div class="header-icon">&#x1F50D;</div>
+      <div class="header-icon">&#x2630;</div>
+      <div class="header-icon" style="background: var(--awar-burgundy);">H</div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <span class="banner-text">EVE Frontier Season 1 is now live</span>
+    <a href="#" class="banner-link">「 GET FOUNDER ACCESS 」</a>
+  </div>
+
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav-pills">
+      <a href="#" class="nav-pill active">Categories</a>
+      <a href="#" class="nav-pill">Latest</a>
+      <a href="#" class="nav-pill">Top</a>
+      <a href="#" class="nav-pill">New</a>
+    </nav>
+
+    <!-- Color Palette -->
+    <div class="section-title">Color Palette</div>
+    <div class="color-swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #000000;"></div>
+        <div class="swatch-label">Black<br>#000</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #0a0a0a;"></div>
+        <div class="swatch-label">Dark<br>#0a0a0a</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #1a1a1a;"></div>
+        <div class="swatch-label">Surface<br>#1a1a1a</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #ff9944;"></div>
+        <div class="swatch-label">Orange<br>#f94</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #773333;"></div>
+        <div class="swatch-label">Burgundy<br>#733</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #ffffff;"></div>
+        <div class="swatch-label">White<br>#fff</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="section-title">Buttons</div>
+    <div class="buttons-demo">
+      <button class="btn btn-primary">+ New Topic</button>
+      <button class="btn btn-default">Reply</button>
+      <button class="btn btn-default">Share</button>
+      <button class="btn btn-primary">Log In</button>
+    </div>
+
+    <!-- Alerts -->
+    <div class="section-title">Alerts</div>
+    <div class="alert alert-info">Welcome to Algorithmic Warfare! Read our community guidelines before posting.</div>
+    <div class="alert alert-success">Your account has been successfully verified.</div>
+
+    <!-- Topic List -->
+    <div class="section-title">Topic List</div>
+    <table class="topic-list">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Replies</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="#" class="topic-title">Welcome to Algorithmic Warfare Forum</a>
+            <div class="topic-meta">
+              <span class="category-badge">General</span>
+              <span class="tag">welcome</span>
+              <span class="tag">announcements</span>
+            </div>
+          </td>
+          <td><div class="posters"><div class="avatar">S</div></div></td>
+          <td class="activity">2h</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#" class="topic-title">EVE Frontier: Smart Assembly Development Guide</a>
+            <div class="topic-meta">
+              <span class="category-badge">Development</span>
+              <span class="tag">eve-frontier</span>
+              <span class="tag">tutorial</span>
+            </div>
+          </td>
+          <td><div class="posters"><div class="avatar">H</div></div></td>
+          <td class="activity">5h</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#" class="topic-title">Building Automated Trading Bots for On-Chain Markets</a>
+            <div class="topic-meta">
+              <span class="category-badge">Trading</span>
+              <span class="tag">automation</span>
+            </div>
+          </td>
+          <td><div class="posters"><div class="avatar">A</div></div></td>
+          <td class="activity">1d</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Topic View -->
+    <div class="topic-view">
+      <div class="section-title">Topic View</div>
+      <div class="topic-header">
+        <h1>Smart Assembly Architecture Best Practices</h1>
+        <div class="topic-meta">
+          <span class="category-badge">Development</span>
+          <span class="tag">architecture</span>
+          <span class="tag">best-practices</span>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-avatar">H</div>
+        <div class="post-content">
+          <div class="post-header">
+            <span class="username">Hecate</span>
+            <span class="post-date">Dec 20, 2025</span>
+          </div>
+          <div class="post-body">
+            <p>When designing Smart Assemblies for EVE Frontier, there are several key patterns to consider. Here's a quick overview of the architecture we've found most effective.</p>
+
+            <p>First, always separate your <code>state management</code> from your business logic:</p>
+
+            <pre><code>// Example state structure
+struct AssemblyState {
+    owner: Address,
+    balance: u256,
+    last_update: u64
+}</code></pre>
+
+            <blockquote>
+              "The best code is code that doesn't need to exist." - Some wise developer
+            </blockquote>
+
+            <p>For more details, check out the <a href="#">official documentation</a>.</p>
+          </div>
+          <div class="post-actions">
+            <span class="post-action">&#x2764; 12</span>
+            <span class="post-action">&#x1F517; Link</span>
+            <span class="post-action">&#x21A9; Reply</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Demo -->
+    <div class="section-title">Form Elements</div>
+    <div class="form-demo">
+      <h3>Create New Topic</h3>
+      <div class="form-row">
+        <label>Title</label>
+        <input type="text" placeholder="Enter topic title...">
+      </div>
+      <div class="form-row">
+        <label>Body</label>
+        <textarea placeholder="Write your post here..."></textarea>
+      </div>
+      <div class="buttons-demo" style="margin: 0;">
+        <button class="btn btn-primary">Create Topic</button>
+        <button class="btn btn-default">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">「 AWAR 」</span>
+        <span class="footer-tagline">Algorithmic Warfare</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Main Site</a>
+        <span class="footer-divider">█</span>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<script type="text/x-handlebars" data-template-name="connectors/below-footer/awar-footer">
+  <div class="awar-custom-footer">
+    <div class="awar-footer-content">
+      <div class="awar-footer-brand">
+        <span class="awar-footer-logo">「 AWAR 」</span>
+        <span class="awar-footer-tagline">Algorithmic Warfare</span>
+      </div>
+      <div class="awar-footer-links">
+        <a href="https://awar.dev/" target="_blank" rel="noopener">Main Site</a>
+        <span class="awar-footer-divider">█</span>
+        <a href="https://awar.dev/#about" target="_blank" rel="noopener">About</a>
+      </div>
+    </div>
+  </div>
+</script>
+
+<style>
+  .awar-custom-footer {
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .awar-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .awar-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .awar-footer-logo {
+    color: #ff9944;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .awar-footer-tagline {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .awar-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .awar-footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+  }
+
+  .awar-footer-links a:hover {
+    color: #ff9944;
+  }
+
+  .awar-footer-divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .awar-footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .awar-footer-brand {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+</style>

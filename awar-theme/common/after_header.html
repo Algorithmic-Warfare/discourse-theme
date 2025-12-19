@@ -1,0 +1,52 @@
+<!-- Custom banner for Algorithmic Warfare -->
+<script type="text/x-handlebars" data-template-name="connectors/above-main-container/awar-banner">
+  {{#if siteSettings.awar_show_banner}}
+    <div class="awar-banner">
+      <div class="awar-banner-content">
+        <span class="awar-banner-text">{{siteSettings.awar_banner_text}}</span>
+        {{#if siteSettings.awar_banner_link}}
+          <a href="{{siteSettings.awar_banner_link}}" class="awar-banner-link" target="_blank">
+            {{siteSettings.awar_banner_link_text}}
+          </a>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</script>
+
+<style>
+  .awar-banner {
+    background: linear-gradient(90deg, #773333 0%, #000000 100%);
+    border-bottom: 1px solid rgba(255, 153, 68, 0.3);
+    padding: 8px 15px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .awar-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .awar-banner-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+  }
+
+  .awar-banner-link {
+    color: #ff9944;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 4px 12px;
+    border: 1px solid #ff9944;
+    transition: all 0.2s ease;
+  }
+
+  .awar-banner-link:hover {
+    background-color: #ff9944;
+    color: #000000;
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "Algorithmic Warfare",
+  "about_url": "https://awar.dev/",
+  "license_url": "https://github.com/discourse/discourse/blob/main/LICENSE.txt",
+  "component": false,
+  "assets": {},
+  "color_schemes": {
+    "AWAR Dark": {
+      "primary": "ffffff",
+      "secondary": "0a0a0a",
+      "tertiary": "ff9944",
+      "quaternary": "773333",
+      "header_background": "000000",
+      "header_primary": "ffffff",
+      "highlight": "ff9944",
+      "danger": "cc4444",
+      "success": "44cc66",
+      "love": "ff9944"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+// Desktop-specific styles for Algorithmic Warfare theme
+
+// Wider content area on desktop
+.wrap {
+  max-width: 1200px;
+}
+
+// Enhanced topic list on desktop
+.topic-list {
+  .main-link {
+    .title {
+      font-size: 15px;
+    }
+  }
+
+  .posters {
+    a:first-child {
+      .avatar {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+// Desktop navigation enhancements
+.d-header {
+  .panel {
+    .header-buttons {
+      .btn {
+        padding: 8px 16px;
+      }
+    }
+  }
+}
+
+// Sidebar styling for desktop
+.sidebar-wrapper {
+  background-color: var(--awar-dark-elevated);
+  border-right: 1px solid var(--awar-border);
+
+  .sidebar-sections {
+    .sidebar-section-link {
+      color: var(--awar-white);
+
+      &:hover {
+        background-color: var(--awar-dark-surface);
+        color: var(--awar-orange);
+      }
+
+      &.active {
+        background-color: var(--awar-burgundy);
+        color: var(--awar-white);
+      }
+    }
+  }
+
+  .sidebar-section-header {
+    color: var(--awar-white-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+}
+
+// Enhanced composer on desktop
+#reply-control {
+  &.open {
+    height: 400px;
+  }
+
+  .d-editor-textarea-wrapper {
+    min-height: 250px;
+  }
+}

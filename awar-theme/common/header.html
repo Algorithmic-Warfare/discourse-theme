@@ -1,0 +1,22 @@
+<script type="text/discourse-plugin" version="1.0">
+  api.decorateWidget('home-logo:after', helper => {
+    return helper.h('span.awar-tagline', '「 ALGORITHMIC WARFARE 」');
+  });
+</script>
+
+<style>
+  .awar-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 10px;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .awar-tagline {
+      display: inline-block;
+    }
+  }
+</style>

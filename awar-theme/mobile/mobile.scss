@@ -1,0 +1,118 @@
+// Mobile-specific styles for Algorithmic Warfare theme
+
+// Compact header on mobile
+.d-header {
+  .title {
+    font-size: 14px;
+  }
+
+  .header-title {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// Mobile topic list
+.topic-list {
+  .main-link {
+    .title {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  // Stack metadata on mobile
+  .topic-list-item {
+    .discourse-tags {
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}
+
+// Mobile navigation
+.nav-pills {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding-bottom: 5px;
+
+  > li {
+    display: inline-block;
+    float: none;
+
+    > a {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+  }
+}
+
+// Mobile composer
+#reply-control {
+  .d-editor-textarea-wrapper {
+    min-height: 150px;
+  }
+
+  .d-editor-button-bar {
+    flex-wrap: wrap;
+
+    .btn {
+      padding: 6px 10px;
+    }
+  }
+}
+
+// Mobile buttons
+.btn {
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+// Full-width buttons on mobile
+.topic-footer-main-buttons {
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+// Mobile user card
+.user-card {
+  width: 100%;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0;
+}
+
+// Mobile modals
+.modal-inner-container {
+  width: 95%;
+  max-width: none;
+  margin: 10px auto;
+}
+
+// Mobile banner adjustments
+.awar-banner {
+  padding: 10px;
+
+  .awar-banner-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .awar-banner-text {
+    font-size: 12px;
+  }
+}
+
+// Hide non-essential elements on mobile
+.mobile-view {
+  .topic-map {
+    .map {
+      flex-wrap: wrap;
+    }
+  }
+}

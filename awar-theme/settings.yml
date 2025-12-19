@@ -1,0 +1,29 @@
+awar_show_banner:
+  type: bool
+  default: false
+  description: "Show the announcement banner at the top of the page"
+
+awar_banner_text:
+  type: string
+  default: "Welcome to Algorithmic Warfare"
+  description: "The text to display in the banner"
+
+awar_banner_link:
+  type: string
+  default: "https://awar.dev/"
+  description: "URL for the banner call-to-action button (leave empty to hide)"
+
+awar_banner_link_text:
+  type: string
+  default: "「 GET FOUNDER ACCESS 」"
+  description: "Text for the banner link button"
+
+awar_accent_color:
+  type: string
+  default: "#ff9944"
+  description: "Primary accent color (orange)"
+
+awar_secondary_color:
+  type: string
+  default: "#773333"
+  description: "Secondary color (burgundy)"
