@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:awar.dev)",
-      "WebFetch(domain:forum.awar.dev)"
+      "WebFetch(domain:forum.awar.dev)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot"
     ]
   }
 }

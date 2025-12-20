@@ -73,30 +73,13 @@ html[data-color-scheme="light"] body {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// System Dark Mode Detection (prefers-color-scheme)
+// Light Mode Detection (Discourse color scheme based)
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Auto-detect system light mode preference (when user hasn't explicitly chosen)
-@media (prefers-color-scheme: light) {
-  html:not(.dark-scheme):not(.light-scheme) {
-    --awar-bg: #f5f5f5;
-    --awar-bg-elevated: #ffffff;
-    --awar-bg-surface: #e8e8e8;
-    --awar-text: #1a1a1a;
-    --awar-text-muted: rgba(26, 26, 26, 0.6);
-    --awar-orange: #cc6622;
-    --awar-orange-dim: #aa5511;
-    --awar-burgundy: #994444;
-    --awar-burgundy-hover: #773333;
-    --awar-border: rgba(0, 0, 0, 0.1);
-    --awar-code-bg: #e8e8e8;
-    --awar-blockquote-bg: #eeeeee;
-    --awar-input-bg: #ffffff;
-    --awar-scrollbar-track: #e0e0e0;
-    --awar-scrollbar-thumb: #cccccc;
-    --awar-modal-backdrop: rgba(0, 0, 0, 0.5);
-  }
-}
+// Detect light mode via Discourse's color scheme
+// When AWAR Light scheme is selected, --secondary will be light (#f5f5f5)
+// We use a custom property check approach - Discourse adds scheme info to body
+// Light mode activates when user selects AWAR Light in Discourse preferences
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Base Typography & Body

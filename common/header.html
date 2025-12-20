@@ -1,21 +1,20 @@
-<script type="text/discourse-plugin" version="1.0">
-  api.decorateWidget('home-logo:after', helper => {
-    return helper.h('span.awar-tagline', '「 ALGORITHMIC WARFARE 」');
-  });
-</script>
-
 <style>
-  .awar-tagline {
+  /* Tagline after logo - CSS approach for Discourse 3.x */
+  .d-header .title-wrapper::after,
+  .d-header .home-logo-wrapper::after {
+    content: '「 ALGORITHMIC WARFARE 」';
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--awar-text-muted, rgba(255, 255, 255, 0.5));
     margin-left: 10px;
     display: none;
+    vertical-align: middle;
   }
 
   @media (min-width: 768px) {
-    .awar-tagline {
+    .d-header .title-wrapper::after,
+    .d-header .home-logo-wrapper::after {
       display: inline-block;
     }
   }
