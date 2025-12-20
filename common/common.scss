@@ -134,6 +134,52 @@ select,
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Emoji Rendering
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Ensure emoji images display correctly
+img.emoji {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 0.15em;
+}
+
+// Emoji in titles (slightly larger)
+.title img.emoji,
+.topic-title img.emoji,
+h1 img.emoji,
+h2 img.emoji {
+  width: 24px;
+  height: 24px;
+}
+
+// Emoji in posts
+.cooked img.emoji {
+  width: 20px;
+  height: 20px;
+}
+
+// Emoji in chat
+.chat-message img.emoji {
+  width: 18px;
+  height: 18px;
+}
+
+// Large emoji (when used alone)
+img.emoji.only-emoji {
+  width: 32px;
+  height: 32px;
+}
+
+// Emoji shortcodes that haven't been converted (fallback styling)
+.emoji-shortcode,
+span[title]:not([class]) {
+  font-family: var(--awar-font);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Header
 // ─────────────────────────────────────────────────────────────────────────────
 
