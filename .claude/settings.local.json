@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:awar.dev)",
+      "WebFetch(domain:forum.awar.dev)"
+    ]
+  }
+}
