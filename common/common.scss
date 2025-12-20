@@ -117,6 +117,108 @@ select,
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Typography Sizing (matching preview.html)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Topic titles - 15px, weight 500
+.topic-list .title,
+.topic-list-item .title,
+.topic-title,
+.fancy-title,
+h2.topic-title a,
+.topic-list .main-link a.title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+// Navigation pills - 14px
+.nav-pills .nav-pill,
+.navigation-container .nav-item,
+.list-controls .nav-pills a {
+  font-size: 14px;
+}
+
+// Table headers - 12px, uppercase, letter-spacing
+.topic-list th,
+.topic-list .topic-list-header,
+.directory-table th,
+table th {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--awar-text-muted);
+}
+
+// Category badges - 12px
+.badge-category,
+.category-name,
+.badge-category__name,
+.category-badge {
+  font-size: 12px;
+}
+
+// Tags - 11px
+.discourse-tag,
+.tag-drop .tag-badge-wrapper,
+.discourse-tags .discourse-tag {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+// Buttons - 14px, weight 500
+.btn,
+button:not(.btn-flat):not(.btn-transparent) {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+// Muted text / meta - 12px
+.topic-meta-data,
+.post-date,
+.relative-date,
+.age,
+.topic-list .num,
+.topic-list .views,
+.topic-list .activity {
+  font-size: 13px;
+  color: var(--awar-text-muted);
+}
+
+// Section titles / labels - uppercase with letter-spacing
+.section-title,
+.sidebar-section-header,
+.categories-label,
+.navigation-categories h3 {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--awar-text-muted);
+}
+
+// Tagline styling
+.awar-tagline,
+.d-header .title-wrapper::after,
+.d-header .home-logo-wrapper::after {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--awar-text-muted);
+}
+
+// Body text line-height
+.cooked,
+.post-body,
+.topic-body {
+  line-height: 1.7;
+}
+
+// General body line-height
+body {
+  line-height: 1.6;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Emoji Rendering
 // ─────────────────────────────────────────────────────────────────────────────
 
