@@ -16,8 +16,8 @@
 
 <style>
   .awar-custom-footer {
-    background-color: #000000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--awar-bg);
+    border-top: 1px solid var(--awar-border);
     padding: 30px 20px;
     margin-top: 40px;
     font-family: 'JetBrains Mono', monospace;
@@ -40,14 +40,14 @@
   }
 
   .awar-footer-logo {
-    color: #ff9944;
+    color: var(--awar-orange);
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.1em;
   }
 
   .awar-footer-tagline {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--awar-text-muted);
     font-size: 12px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -60,18 +60,18 @@
   }
 
   .awar-footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--awar-text-muted);
     text-decoration: none;
     font-size: 13px;
     transition: color 0.2s ease;
   }
 
   .awar-footer-links a:hover {
-    color: #ff9944;
+    color: var(--awar-orange);
   }
 
   .awar-footer-divider {
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--awar-border);
     font-size: 8px;
   }
 

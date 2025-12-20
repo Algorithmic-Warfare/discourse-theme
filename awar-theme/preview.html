@@ -8,18 +8,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Dark Mode (Default) */
     :root {
-      --awar-black: #000000;
-      --awar-dark: #0a0a0a;
-      --awar-dark-elevated: #111111;
-      --awar-dark-surface: #1a1a1a;
+      --awar-bg: #000000;
+      --awar-bg-elevated: #111111;
+      --awar-bg-surface: #1a1a1a;
+      --awar-text: #ffffff;
+      --awar-text-muted: rgba(255, 255, 255, 0.5);
       --awar-orange: #ff9944;
       --awar-orange-dim: #cc7733;
       --awar-burgundy: #773333;
       --awar-burgundy-hover: #994444;
-      --awar-white: #ffffff;
-      --awar-white-muted: rgba(255, 255, 255, 0.5);
       --awar-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Light Mode */
+    html.light-scheme {
+      --awar-bg: #f5f5f5;
+      --awar-bg-elevated: #ffffff;
+      --awar-bg-surface: #e8e8e8;
+      --awar-text: #1a1a1a;
+      --awar-text-muted: rgba(26, 26, 26, 0.6);
+      --awar-orange: #cc6622;
+      --awar-orange-dim: #aa5511;
+      --awar-burgundy: #994444;
+      --awar-burgundy-hover: #773333;
+      --awar-border: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -30,14 +44,44 @@
 
     body {
       font-family: 'JetBrains Mono', monospace;
-      background-color: var(--awar-black);
-      color: var(--awar-white);
+      background-color: var(--awar-bg);
+      color: var(--awar-text);
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: inline-flex;
+      gap: 5px;
+      margin-left: 15px;
+    }
+
+    .theme-toggle button {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 8px 16px;
+      border: 1px solid var(--awar-border);
+      background-color: var(--awar-bg-surface);
+      color: var(--awar-text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle button:hover {
+      border-color: var(--awar-orange);
+      color: var(--awar-orange);
+    }
+
+    .theme-toggle button.active {
+      background-color: var(--awar-burgundy);
+      border-color: var(--awar-burgundy);
+      color: #ffffff;
     }
 
     /* Header */
     .header {
-      background-color: var(--awar-black);
+      background-color: var(--awar-bg);
       border-bottom: 1px solid var(--awar-border);
       padding: 15px 20px;
       display: flex;
@@ -54,13 +98,13 @@
     .logo {
       font-size: 20px;
       font-weight: 700;
-      color: var(--awar-white);
+      color: var(--awar-text);
     }
 
     .tagline {
       font-size: 10px;
       letter-spacing: 0.1em;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
     }
 
     .header-icons {
@@ -74,19 +118,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--awar-white);
+      color: var(--awar-text);
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .header-icon:hover {
-      background-color: var(--awar-dark-surface);
+      background-color: var(--awar-bg-surface);
       color: var(--awar-orange);
     }
 
     /* Banner */
     .banner {
-      background: linear-gradient(90deg, #773333 0%, #000000 100%);
+      background: linear-gradient(90deg, var(--awar-burgundy) 0%, var(--awar-bg) 100%);
       border-bottom: 1px solid rgba(255, 153, 68, 0.3);
       padding: 10px 20px;
       text-align: center;
@@ -112,7 +156,7 @@
 
     .banner-link:hover {
       background-color: var(--awar-orange);
-      color: var(--awar-black);
+      color: var(--awar-bg);
     }
 
     /* Container */
@@ -133,20 +177,20 @@
 
     .nav-pill {
       padding: 8px 16px;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       text-decoration: none;
       transition: all 0.2s;
       font-size: 14px;
     }
 
     .nav-pill:hover {
-      background-color: var(--awar-dark-surface);
+      background-color: var(--awar-bg-surface);
       color: var(--awar-orange);
     }
 
     .nav-pill.active {
       background-color: var(--awar-burgundy);
-      color: var(--awar-white);
+      color: #ffffff;
     }
 
     /* Topic List */
@@ -158,7 +202,7 @@
     .topic-list th {
       text-align: left;
       padding: 10px 15px;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-weight: 500;
       font-size: 12px;
       text-transform: uppercase;
@@ -172,11 +216,11 @@
     }
 
     .topic-list tr:hover td {
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
     }
 
     .topic-title {
-      color: var(--awar-white);
+      color: var(--awar-text);
       text-decoration: none;
       font-size: 15px;
       font-weight: 500;
@@ -202,12 +246,12 @@
     }
 
     .category-badge::before {
-      content: "「";
+      content: "[";
       color: var(--awar-orange);
     }
 
     .category-badge::after {
-      content: "」";
+      content: "]";
       color: var(--awar-orange);
     }
 
@@ -232,6 +276,7 @@
       justify-content: center;
       font-size: 12px;
       font-weight: 600;
+      color: #ffffff;
     }
 
     .posters {
@@ -240,7 +285,7 @@
     }
 
     .activity {
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-size: 13px;
     }
 
@@ -264,7 +309,7 @@
 
     .btn-primary {
       background-color: var(--awar-burgundy);
-      color: var(--awar-white);
+      color: #ffffff;
     }
 
     .btn-primary:hover {
@@ -272,13 +317,13 @@
     }
 
     .btn-default {
-      background-color: var(--awar-dark-surface);
-      color: var(--awar-white);
+      background-color: var(--awar-bg-surface);
+      color: var(--awar-text);
       border: 1px solid var(--awar-border);
     }
 
     .btn-default:hover {
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
       color: var(--awar-orange);
       border-color: var(--awar-orange);
     }
@@ -318,6 +363,7 @@
       justify-content: center;
       font-weight: 600;
       flex-shrink: 0;
+      color: #ffffff;
     }
 
     .post-content {
@@ -337,12 +383,12 @@
     }
 
     .post-date {
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-size: 12px;
     }
 
     .post-body {
-      color: var(--awar-white);
+      color: var(--awar-text);
       line-height: 1.7;
     }
 
@@ -351,7 +397,7 @@
     }
 
     .post-body code {
-      background-color: var(--awar-dark-surface);
+      background-color: var(--awar-bg-surface);
       color: var(--awar-orange);
       padding: 2px 6px;
       border: 1px solid var(--awar-border);
@@ -359,7 +405,7 @@
     }
 
     .post-body pre {
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
       border: 1px solid var(--awar-border);
       padding: 15px;
       margin: 15px 0;
@@ -370,15 +416,15 @@
       background: none;
       border: none;
       padding: 0;
-      color: var(--awar-white);
+      color: var(--awar-text);
     }
 
     .post-body blockquote {
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
       border-left: 3px solid var(--awar-orange);
       padding: 10px 15px;
       margin: 15px 0;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
     }
 
     .post-body a {
@@ -392,7 +438,7 @@
     }
 
     .post-action {
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-size: 13px;
       cursor: pointer;
       transition: all 0.2s;
@@ -409,7 +455,7 @@
     .form-demo {
       margin: 30px 0;
       padding: 20px;
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
       border: 1px solid var(--awar-border);
     }
 
@@ -427,15 +473,15 @@
     .form-row label {
       display: block;
       margin-bottom: 5px;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-size: 12px;
     }
 
     .form-row input,
     .form-row textarea {
       width: 100%;
-      background-color: var(--awar-dark-surface);
-      color: var(--awar-white);
+      background-color: var(--awar-bg-surface);
+      color: var(--awar-text);
       border: 1px solid var(--awar-border);
       padding: 10px 12px;
       font-family: 'JetBrains Mono', monospace;
@@ -456,7 +502,7 @@
 
     /* Footer */
     .footer {
-      background-color: var(--awar-black);
+      background-color: var(--awar-bg);
       border-top: 1px solid var(--awar-border);
       padding: 30px 20px;
       margin-top: 50px;
@@ -484,7 +530,7 @@
     }
 
     .footer-tagline {
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       font-size: 12px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -497,7 +543,7 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--awar-text-muted);
       text-decoration: none;
       font-size: 13px;
     }
@@ -507,7 +553,7 @@
     }
 
     .footer-divider {
-      color: rgba(255, 255, 255, 0.2);
+      color: var(--awar-border);
       font-size: 8px;
     }
 
@@ -516,7 +562,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
       margin: 30px 0 15px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--awar-border);
@@ -530,7 +576,7 @@
     }
 
     .alert-info {
-      background-color: var(--awar-dark-elevated);
+      background-color: var(--awar-bg-elevated);
       border-left: 3px solid var(--awar-orange);
     }
 
@@ -551,11 +597,11 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: var(--awar-dark);
+      background: var(--awar-bg);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--awar-dark-surface);
+      background: var(--awar-bg-surface);
       border: 1px solid var(--awar-border);
     }
 
@@ -565,7 +611,7 @@
 
     ::selection {
       background-color: var(--awar-burgundy);
-      color: var(--awar-white);
+      color: #ffffff;
     }
 
     /* Color Swatches */
@@ -589,28 +635,50 @@
 
     .swatch-label {
       font-size: 10px;
-      color: var(--awar-white-muted);
+      color: var(--awar-text-muted);
+    }
+
+    /* Mode indicator */
+    .mode-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+      background-color: var(--awar-bg-elevated);
+      border-bottom: 1px solid var(--awar-border);
+      font-size: 12px;
+      color: var(--awar-text-muted);
     }
   </style>
 </head>
 <body>
+  <!-- Mode Indicator with Theme Toggle -->
+  <div class="mode-indicator">
+    Theme Preview
+    <div class="theme-toggle">
+      <button id="dark-btn" class="active" onclick="setTheme('dark')">Dark</button>
+      <button id="light-btn" onclick="setTheme('light')">Light</button>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="header-left">
       <div class="logo">Algorithmic Warfare</div>
-      <span class="tagline">「 ALGORITHMIC WARFARE 」</span>
+      <span class="tagline">[ ALGORITHMIC WARFARE ]</span>
     </div>
     <div class="header-icons">
-      <div class="header-icon">&#x1F50D;</div>
-      <div class="header-icon">&#x2630;</div>
-      <div class="header-icon" style="background: var(--awar-burgundy);">H</div>
+      <div class="header-icon">?</div>
+      <div class="header-icon">=</div>
+      <div class="header-icon" style="background: var(--awar-burgundy); color: #fff;">H</div>
     </div>
   </header>
 
   <!-- Banner -->
   <div class="banner">
     <span class="banner-text">EVE Frontier Season 1 is now live</span>
-    <a href="#" class="banner-link">「 GET FOUNDER ACCESS 」</a>
+    <a href="#" class="banner-link">[ GET FOUNDER ACCESS ]</a>
   </div>
 
   <div class="container">
@@ -626,28 +694,28 @@
     <div class="section-title">Color Palette</div>
     <div class="color-swatches">
       <div class="swatch">
-        <div class="swatch-color" style="background: #000000;"></div>
-        <div class="swatch-label">Black<br>#000</div>
+        <div class="swatch-color" style="background: var(--awar-bg);"></div>
+        <div class="swatch-label">Background</div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background: #0a0a0a;"></div>
-        <div class="swatch-label">Dark<br>#0a0a0a</div>
+        <div class="swatch-color" style="background: var(--awar-bg-elevated);"></div>
+        <div class="swatch-label">Elevated</div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background: #1a1a1a;"></div>
-        <div class="swatch-label">Surface<br>#1a1a1a</div>
+        <div class="swatch-color" style="background: var(--awar-bg-surface);"></div>
+        <div class="swatch-label">Surface</div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background: #ff9944;"></div>
-        <div class="swatch-label">Orange<br>#f94</div>
+        <div class="swatch-color" style="background: var(--awar-orange);"></div>
+        <div class="swatch-label">Orange</div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background: #773333;"></div>
-        <div class="swatch-label">Burgundy<br>#733</div>
+        <div class="swatch-color" style="background: var(--awar-burgundy);"></div>
+        <div class="swatch-label">Burgundy</div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background: #ffffff;"></div>
-        <div class="swatch-label">White<br>#fff</div>
+        <div class="swatch-color" style="background: var(--awar-text);"></div>
+        <div class="swatch-label">Text</div>
       </div>
     </div>
 
@@ -752,9 +820,9 @@ struct AssemblyState {
             <p>For more details, check out the <a href="#">official documentation</a>.</p>
           </div>
           <div class="post-actions">
-            <span class="post-action">&#x2764; 12</span>
-            <span class="post-action">&#x1F517; Link</span>
-            <span class="post-action">&#x21A9; Reply</span>
+            <span class="post-action">* 12</span>
+            <span class="post-action"># Link</span>
+            <span class="post-action">> Reply</span>
           </div>
         </div>
       </div>
@@ -783,15 +851,33 @@ struct AssemblyState {
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <span class="footer-logo">「 AWAR 」</span>
+        <span class="footer-logo">[ AWAR ]</span>
         <span class="footer-tagline">Algorithmic Warfare</span>
       </div>
       <div class="footer-links">
         <a href="#">Main Site</a>
-        <span class="footer-divider">█</span>
+        <span class="footer-divider">|</span>
         <a href="#">About</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    function setTheme(theme) {
+      const html = document.documentElement;
+      const darkBtn = document.getElementById('dark-btn');
+      const lightBtn = document.getElementById('light-btn');
+
+      if (theme === 'light') {
+        html.classList.add('light-scheme');
+        lightBtn.classList.add('active');
+        darkBtn.classList.remove('active');
+      } else {
+        html.classList.remove('light-scheme');
+        darkBtn.classList.add('active');
+        lightBtn.classList.remove('active');
+      }
+    }
+  </script>
 </body>
 </html>
