@@ -185,6 +185,31 @@ button:not(.btn-flat):not(.btn-transparent) {
   color: var(--awar-text-muted);
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Sidebar
+// ─────────────────────────────────────────────────────────────────────────────
+
+.sidebar-wrapper,
+.d-sidebar,
+#d-sidebar {
+  background-color: var(--awar-bg);
+}
+
+.sidebar-sections {
+  background-color: var(--awar-bg);
+}
+
+.sidebar-section-link-wrapper {
+  &:hover {
+    background-color: var(--awar-bg-surface);
+  }
+}
+
+.sidebar-section-link.active {
+  background-color: var(--awar-bg-surface);
+  border-left: 2px solid var(--awar-orange);
+}
+
 // Section titles / labels - uppercase with letter-spacing
 .section-title,
 .sidebar-section-header,
