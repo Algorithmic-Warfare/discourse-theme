@@ -1036,9 +1036,24 @@ select,
 // Admin Sidebar
 // ─────────────────────────────────────────────────────────────────────────────
 
-.admin-main-nav {
-  background-color: var(--awar-bg-elevated);
+.admin-main-nav,
+.admin-sidebar-nav,
+.admin-nav,
+.sidebar-wrapper.admin-sidebar {
+  background-color: var(--awar-bg);
   border-right: 1px solid var(--awar-border);
+}
+
+// Admin sidebar sections
+.admin-main-nav .sidebar-sections,
+.admin-main-nav .sidebar-section,
+.admin-main-nav .sidebar-wrapper {
+  background-color: var(--awar-bg);
+}
+
+// Admin filter input
+.admin-main-nav .filter-wrapper {
+  background-color: var(--awar-bg);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
