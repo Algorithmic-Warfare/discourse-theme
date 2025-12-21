@@ -1036,14 +1036,24 @@ select,
 // Admin Sidebar
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Force admin sidebar to pure black
+// Force admin sidebar to pure black - target the actual class
+.sidebar-sections.admin-panel {
+  background-color: var(--awar-bg) !important;
+}
+
+// Admin filter controls
+.d-admin-filter,
+.admin-users-list__controls {
+  background-color: var(--awar-bg) !important;
+}
+
+// Generic admin sidebar selectors
 .admin-main-nav,
 .admin-sidebar-nav,
 .admin-nav,
 .sidebar-wrapper.admin-sidebar,
 .admin-panel .sidebar-wrapper,
-.admin-contents .sidebar-wrapper,
-body.admin-area .sidebar-wrapper {
+.admin-contents .sidebar-wrapper {
   background-color: var(--awar-bg) !important;
   border-right: 1px solid var(--awar-border);
 }
@@ -1051,8 +1061,6 @@ body.admin-area .sidebar-wrapper {
 // Admin sidebar sections and all children
 .admin-main-nav .sidebar-sections,
 .admin-main-nav .sidebar-section,
-.admin-main-nav .sidebar-wrapper,
-.admin-main-nav > *,
 .admin-panel .sidebar-sections,
 .admin-panel .admin-sidebar {
   background-color: var(--awar-bg) !important;
@@ -1061,15 +1069,8 @@ body.admin-area .sidebar-wrapper {
 // Admin filter input area
 .admin-main-nav .filter-wrapper,
 .admin-main-nav .admin-filter,
-.admin-main-nav input[type="text"] {
-  background-color: var(--awar-bg-surface);
-}
-
-// Target the entire admin left column
-.admin-page .sidebar-wrapper,
-.admin-page .admin-main-nav,
-[class*="admin"] .sidebar-wrapper {
-  background-color: var(--awar-bg) !important;
+.admin-filter__input {
+  background-color: var(--awar-bg-surface) !important;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
