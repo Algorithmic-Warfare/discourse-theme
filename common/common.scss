@@ -698,6 +698,63 @@ select,
   }
 }
 
+// Login modal passkey section
+.login-modal-body {
+  background-color: var(--awar-bg-elevated);
+}
+
+.login-modal-body__wrapper {
+  background-color: var(--awar-bg-elevated);
+}
+
+.passkey-login-button,
+.login-with-passkey {
+  background-color: var(--awar-bg-surface);
+  border: 1px solid var(--awar-border);
+  color: var(--awar-text);
+
+  &:hover {
+    background-color: var(--awar-bg);
+    border-color: var(--awar-orange);
+  }
+}
+
+// Second factor / security key section
+.second-factor,
+.security-key-area,
+.passkey-options,
+.webauthn-area {
+  background-color: var(--awar-bg-surface);
+  border: 1px solid var(--awar-border);
+  padding: 15px;
+}
+
+// Login form inputs
+.login-modal {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    background-color: var(--awar-bg-surface);
+    border: 1px solid var(--awar-border);
+    color: var(--awar-text);
+
+    &:focus {
+      border-color: var(--awar-orange);
+      box-shadow: 0 0 0 1px var(--awar-orange);
+    }
+
+    &::placeholder {
+      color: var(--awar-text-muted);
+    }
+  }
+}
+
+// Alternative login methods container
+.login-right-side,
+.alternative-login-methods {
+  background-color: var(--awar-bg-surface);
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Composer
 // ─────────────────────────────────────────────────────────────────────────────
