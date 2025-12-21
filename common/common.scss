@@ -473,6 +473,76 @@ span[title]:not([class]) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Topic Post Layout & Spacing
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Main topic area - ensure proper spacing from sidebar
+.topic-area {
+  padding-left: 15px;
+}
+
+// Post stream container
+.post-stream {
+  margin-left: 0;
+}
+
+// Individual post layout
+.topic-post {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+
+  // Avatar column
+  .topic-avatar {
+    flex-shrink: 0;
+    width: 45px;
+    padding-top: 5px;
+
+    .post-avatar {
+      width: 45px;
+
+      .avatar {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  // Content column
+  .topic-body {
+    flex: 1;
+    min-width: 0; // Prevent overflow
+    padding-left: 10px;
+  }
+}
+
+// Embedded/reply posts - slightly smaller avatars
+.embedded-posts {
+  .topic-avatar {
+    width: 35px;
+
+    .avatar {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+// Post article proper spacing
+article.boxed {
+  padding: 15px;
+
+  &.onscreen-post {
+    margin-left: 0;
+  }
+}
+
+// Ensure post content doesn't overflow
+.contents {
+  overflow: hidden;
+}
+
 // Post actions
 .post-menu-area {
   .btn-flat {
