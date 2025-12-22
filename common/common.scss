@@ -1097,10 +1097,10 @@ table.category-list {
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Force all letter avatars to use theme colors via CSS filter
-// Invert first to make letter dark, then apply color shift to burgundy
+// Invert to make white letter black, then color-shift background to burgundy
 img.avatar[src*="letter_avatar"],
 img.avatar[src*="letter/"] {
-  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-30deg) saturate(400%);
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(320deg) brightness(0.7);
 }
 
 // Alternative: hide the avatar image and use CSS background
