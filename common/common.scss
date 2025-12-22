@@ -1633,14 +1633,14 @@ select,
 
   &::before {
     content: "「 ";
-    color: var(--awar-orange);
+    color: inherit;
     font-weight: 400;
     white-space: pre;
   }
 
   &::after {
     content: " 」";
-    color: var(--awar-orange);
+    color: inherit;
     font-weight: 400;
     white-space: pre;
   }
