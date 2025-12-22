@@ -663,6 +663,538 @@ article.boxed {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Categories Page
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Category page layout
+.categories-list,
+.category-list {
+  background-color: var(--awar-bg);
+
+  // Table headers
+  th {
+    color: var(--awar-text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--awar-border);
+    background-color: transparent;
+  }
+
+  // Category rows
+  tr {
+    border-bottom: 1px solid var(--awar-border);
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--awar-bg-elevated);
+    }
+  }
+
+  td {
+    padding: 20px 15px;
+    vertical-align: top;
+    border-color: var(--awar-border);
+  }
+
+  // Category title styling
+  .category-text-title,
+  .category-name {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--awar-text);
+  }
+
+  // Category description
+  .category-description,
+  .category-text-description {
+    color: var(--awar-text-muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  // Topics count
+  .topics,
+  .num {
+    color: var(--awar-text-muted);
+    font-size: 12px;
+    text-align: center;
+
+    .value {
+      color: var(--awar-orange);
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+    }
+  }
+}
+
+// Category title link - override the bracket styling for category page
+.category-title-link,
+.category-title h3 a {
+  color: var(--awar-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--awar-orange);
+  }
+}
+
+// Featured topics in category
+.category-featured-topics {
+  .featured-topic {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--awar-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      color: var(--awar-text);
+      font-size: 13px;
+
+      &:hover {
+        color: var(--awar-orange);
+      }
+    }
+  }
+}
+
+// Subcategories
+.subcategories {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .subcategory {
+    font-size: 11px;
+    color: var(--awar-text-muted);
+    padding: 4px 10px;
+    background-color: var(--awar-bg-surface);
+    border: 1px solid var(--awar-border);
+
+    &:hover {
+      border-color: var(--awar-orange);
+      color: var(--awar-orange);
+    }
+  }
+}
+
+// Latest topics section (right sidebar on categories page)
+.category-boxes,
+.latest-topic-list {
+  .latest-topic-list-item,
+  .topic-list-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--awar-border);
+
+    &:hover {
+      background-color: var(--awar-bg-elevated);
+    }
+  }
+
+  .topic-poster {
+    margin-right: 10px;
+
+    img {
+      border-radius: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .topic-title,
+  .main-link a {
+    color: var(--awar-text);
+    font-size: 14px;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--awar-orange);
+    }
+  }
+
+  .topic-category,
+  .badge-category {
+    font-size: 11px;
+  }
+}
+
+// "Latest" header on categories page
+.category-boxes-with-topics h2,
+.latest-topic-list-container h2 {
+  color: var(--awar-text);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--awar-border);
+  margin-bottom: 15px;
+}
+
+// Category box style (if using boxes instead of list)
+.category-box-inner {
+  background-color: var(--awar-bg-elevated);
+  border: 1px solid var(--awar-border);
+  padding: 20px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--awar-orange);
+  }
+
+  .category-box-heading {
+    margin-bottom: 10px;
+
+    a {
+      color: var(--awar-text);
+      font-weight: 600;
+
+      &:hover {
+        color: var(--awar-orange);
+      }
+    }
+  }
+
+  .category-description {
+    color: var(--awar-text-muted);
+    font-size: 13px;
+  }
+
+  .topics-count,
+  .category-stat {
+    color: var(--awar-text-muted);
+    font-size: 12px;
+
+    .value {
+      color: var(--awar-orange);
+      font-weight: 600;
+    }
+  }
+}
+
+// Topic stats on categories page
+.category-topic-count {
+  color: var(--awar-text-muted);
+  font-size: 12px;
+}
+
+// "More" link on categories page
+.more-topics a,
+.show-more a {
+  color: var(--awar-orange);
+  font-size: 13px;
+  padding: 10px 0;
+  display: inline-block;
+
+  &:hover {
+    color: var(--awar-orange-dim);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Categories Page - Discourse 3.x Specific
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Main categories table
+.categories-boxes,
+[class*="category-list"],
+table.category-list {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--awar-bg);
+
+  thead th {
+    background-color: transparent;
+    color: var(--awar-text-muted);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--awar-border);
+    text-align: left;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--awar-border);
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: var(--awar-bg-elevated);
+    }
+  }
+
+  td {
+    padding: 18px 16px;
+    vertical-align: middle;
+  }
+}
+
+// Category cell with title and description
+.category-list-item,
+.category {
+  h3 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    a {
+      color: var(--awar-text);
+      text-decoration: none;
+      transition: color 0.15s;
+
+      &:hover {
+        color: var(--awar-orange);
+      }
+    }
+  }
+
+  .category-description {
+    color: var(--awar-text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Topics count column
+.topics .value,
+.category-topics .value {
+  color: var(--awar-orange);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.topics .unit,
+.category-topics .unit {
+  color: var(--awar-text-muted);
+  font-size: 11px;
+}
+
+// Right side "Latest" section
+.category-list-with-latest,
+.categories-and-latest {
+  display: flex;
+  gap: 30px;
+
+  .categories {
+    flex: 2;
+  }
+
+  .latest-topics,
+  .latest {
+    flex: 1;
+    min-width: 280px;
+  }
+}
+
+// Latest topics list styling
+.latest-topic-list,
+.latest-topics-list {
+  h2 {
+    color: var(--awar-text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 16px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--awar-border);
+  }
+
+  .latest-topic-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--awar-border);
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: var(--awar-bg-elevated);
+      margin: 0 -10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .topic-poster-avatar {
+    flex-shrink: 0;
+
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 0;
+    }
+  }
+
+  .topic-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .topic-title {
+    display: block;
+    color: var(--awar-text);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--awar-orange);
+    }
+  }
+
+  .topic-category {
+    font-size: 11px;
+  }
+
+  .topic-replies {
+    text-align: right;
+    flex-shrink: 0;
+
+    .num {
+      color: var(--awar-text-muted);
+      font-size: 12px;
+    }
+  }
+
+  .topic-activity {
+    color: var(--awar-text-muted);
+    font-size: 11px;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Letter Avatars - Override Discourse default colors
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Force all letter avatars to use theme colors via CSS filter
+// This converts the green/various colors to our burgundy/orange palette
+img.avatar[src*="letter_avatar"],
+img.avatar[src*="letter/"] {
+  filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(-10deg);
+}
+
+// Alternative: hide the avatar image and use CSS background
+.avatar-flair {
+  background-color: var(--awar-burgundy) !important;
+  color: var(--awar-text) !important;
+}
+
+// For the latest topics section - style the avatar containers
+.latest-topic-list .avatar,
+.category-list .avatar,
+.topic-list .avatar {
+  border-radius: 0 !important;
+}
+
+// "More" button styling on categories page
+.show-more a,
+a.show-more,
+.more-topics a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--awar-bg-surface);
+  border: 1px solid var(--awar-border);
+  color: var(--awar-text);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: var(--awar-burgundy);
+    border-color: var(--awar-burgundy);
+    color: var(--awar-text);
+  }
+}
+
+// Latest section header on categories page
+.categories-and-latest-container .latest-topic-list h2,
+.latest h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--awar-text-muted);
+  border-bottom: 1px solid var(--awar-border);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+// Topic list in categories latest section
+.topic-list-latest {
+  .topic-list-data {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--awar-border);
+  }
+
+  .topic-title a {
+    color: var(--awar-text);
+    font-size: 13px;
+
+    &:hover {
+      color: var(--awar-orange);
+    }
+  }
+}
+
+// Category badges in latest section
+.badge-category-parent-bg,
+.badge-category-bg {
+  border-radius: 0;
+}
+
+// Filter dropdowns on categories page
+.navigation-container {
+  .nav-pills {
+    border-bottom: 1px solid var(--awar-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .select-kit {
+    .select-kit-header {
+      background-color: var(--awar-bg-surface);
+      border: 1px solid var(--awar-border);
+      color: var(--awar-text);
+      font-size: 12px;
+
+      &:hover {
+        border-color: var(--awar-orange);
+      }
+    }
+  }
+}
+
+// New Category / New Topic buttons
+.navigation-container .btn,
+#navigation-bar + .btn {
+  &.btn-primary {
+    background-color: var(--awar-burgundy);
+    color: var(--awar-text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      background-color: var(--awar-burgundy-hover);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Tags
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -1080,13 +1612,13 @@ select,
 // Add bracket notation to category headers (like on awar.dev)
 .category-title-link {
   &::before {
-    content: "「 ";
+    content: "[ ";
     color: var(--awar-orange);
     font-weight: 400;
   }
 
   &::after {
-    content: " 」";
+    content: " ]";
     color: var(--awar-orange);
     font-weight: 400;
   }
