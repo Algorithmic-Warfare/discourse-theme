@@ -5,6 +5,12 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Font Import - JetBrains Mono from Google Fonts
+// ─────────────────────────────────────────────────────────────────────────────
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Variables - Dark Mode (Default)
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -95,7 +101,12 @@ body {
   color: var(--awar-text);
 }
 
-// Apply monospace font globally
+// Apply monospace font globally - aggressive override
+* {
+  font-family: var(--awar-font) !important;
+}
+
+// Ensure specific elements use the font
 .d-header,
 .topic-list,
 .topic-body,
@@ -112,8 +123,13 @@ select,
 .user-info,
 #create-account,
 #login-form,
-.d-modal {
-  font-family: var(--awar-font);
+.d-modal,
+.sidebar-wrapper,
+.category-list,
+.latest-topic-list,
+h1, h2, h3, h4, h5, h6,
+p, span, a, li {
+  font-family: var(--awar-font) !important;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1616,14 +1632,14 @@ select,
   gap: 0;
 
   &::before {
-    content: "[ ";
+    content: "「 ";
     color: var(--awar-orange);
     font-weight: 400;
     white-space: pre;
   }
 
   &::after {
-    content: " ]";
+    content: " 」";
     color: var(--awar-orange);
     font-weight: 400;
     white-space: pre;
