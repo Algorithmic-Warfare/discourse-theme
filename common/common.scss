@@ -1611,16 +1611,28 @@ select,
 
 // Add bracket notation to category headers (like on awar.dev)
 .category-title-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0;
+
   &::before {
     content: "[ ";
     color: var(--awar-orange);
     font-weight: 400;
+    white-space: pre;
   }
 
   &::after {
     content: " ]";
     color: var(--awar-orange);
     font-weight: 400;
+    white-space: pre;
+  }
+
+  // Make the inner div inline
+  .category-text-title {
+    display: inline-flex;
+    align-items: center;
   }
 }
 
