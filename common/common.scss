@@ -3159,6 +3159,58 @@ textarea.d-editor-input {
 
 // Fix composer bottom bar layout - ensure submit panel is visible
 #reply-control {
+  // Ensure proper flex column layout for the reply area
+  .reply-area {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Prevent children from overflowing
+  }
+
+  // The editor/preview section should take available space but not overflow
+  .wmd-controls {
+    flex: 1 1 auto;
+    min-height: 0; // Important for flex child to shrink properly
+    overflow: hidden;
+  }
+
+  // Editor container needs proper flex constraints
+  .d-editor {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .d-editor-container {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  // Textarea column should constrain its content
+  .d-editor-textarea-column {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Textarea wrapper needs to be flexible
+  .d-editor-textarea-wrapper {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // The actual textarea should fill its container but not overflow
+  .d-editor-input {
+    flex: 1 1 auto;
+    min-height: 100px;
+    max-height: 100%;
+    resize: none;
+  }
+
+  // Submit panel must be above other elements and properly positioned
   .submit-panel {
     display: flex !important;
     align-items: center;
@@ -3166,6 +3218,9 @@ textarea.d-editor-input {
     padding: 8px;
     background-color: var(--awar-bg-elevated);
     border-top: 1px solid var(--awar-border);
+    position: relative;
+    z-index: 10; // Ensure it's above textarea
+    flex-shrink: 0; // Don't let it shrink
   }
 
   .save-or-cancel {
