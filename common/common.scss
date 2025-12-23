@@ -3157,6 +3157,36 @@ textarea.d-editor-input {
   border-top: 1px solid var(--awar-border);
 }
 
+// Fix composer bottom bar layout - ensure submit panel is visible
+#reply-control {
+  .submit-panel {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: var(--awar-bg-elevated);
+    border-top: 1px solid var(--awar-border);
+  }
+
+  .save-or-cancel {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // Ensure the bottom bar stays visible
+  .composer-controls {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+
+    .submit-panel {
+      flex: 1;
+    }
+  }
+}
+
 // Submit button
 .create,
 .save-or-cancel .btn-primary {
