@@ -231,11 +231,6 @@ button:not(.btn-flat):not(.btn-transparent) {
   border-left: 2px solid var(--awar-orange);
 }
 
-// Override for sidebar channel active state - use subtle background instead of bright burgundy
-.sidebar-wrapper .sidebar-sections .sidebar-section-link.active {
-  background-color: var(--awar-bg-surface);
-}
-
 // Section titles / labels - uppercase with letter-spacing
 .section-title,
 .sidebar-section-header,
