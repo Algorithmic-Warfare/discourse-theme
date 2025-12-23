@@ -52,6 +52,12 @@
         background-color: var(--awar-bg-surface);
         color: var(--awar-orange);
       }
+
+      // BEM-style active class for chat channels
+      &--active {
+        background-color: var(--awar-bg-surface) !important;
+        color: var(--awar-orange) !important;
+      }
     }
   }
 
