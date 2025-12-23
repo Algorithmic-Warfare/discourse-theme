@@ -551,6 +551,8 @@ span[title]:not([class]) {
       .avatar {
         width: 45px;
         height: 45px;
+        border: 1px solid var(--awar-border);
+        box-sizing: border-box;
       }
     }
   }
@@ -1259,9 +1261,11 @@ a.show-more,
   }
 }
 
-// User avatars
+// User avatars - add subtle border so dark avatars are visible on dark backgrounds
 .avatar {
   border-radius: 0;
+  border: 1px solid var(--awar-border);
+  box-sizing: border-box;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
