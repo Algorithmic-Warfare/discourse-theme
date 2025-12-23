@@ -2362,34 +2362,20 @@ button.getting-started {
 }
 
 // Fix user menu dropdown positioning (Discourse 3.x)
-.d-header {
-  // Ensure header and all children don't clip dropdowns
+.d-header,
+.d-header .wrap,
+.d-header .contents,
+.d-header .panel {
   overflow: visible !important;
-
-  .wrap,
-  .contents,
-  .panel {
-    overflow: visible !important;
-  }
-
-  // Fix the panel positioning that pushes menu upward
-  .panel {
-    position: static !important;
-  }
-
-  .user-menu-dropdown-wrapper {
-    position: relative;
-  }
 }
 
-.user-menu {
-  position: absolute !important;
-  top: 100% !important;
-  right: 0 !important;
+.user-menu.drop-down {
+  position: fixed !important;
+  top: 70px !important;
+  right: 10px !important;
   bottom: auto !important;
-  max-height: 80vh !important;
+  max-height: calc(100vh - 80px) !important;
   overflow-y: auto !important;
-  margin-top: 5px;
 }
 
 .menu-links {
