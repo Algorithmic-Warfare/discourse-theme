@@ -32,6 +32,9 @@
   --awar-scrollbar-track: #0a0a0a;
   --awar-scrollbar-thumb: #1a1a1a;
   --awar-modal-backdrop: rgba(0, 0, 0, 0.8);
+
+  // Override Discourse hover color for dark theme
+  --d-hover: #1a1a1a;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -55,6 +58,7 @@ html.light-scheme {
   --awar-scrollbar-track: #e0e0e0;
   --awar-scrollbar-thumb: #cccccc;
   --awar-modal-backdrop: rgba(0, 0, 0, 0.5);
+  --d-hover: #e8e8e8;
 }
 
 // Alternative selectors for light mode detection
@@ -76,6 +80,7 @@ html[data-color-scheme="light"] body {
   --awar-scrollbar-track: #e0e0e0;
   --awar-scrollbar-thumb: #cccccc;
   --awar-modal-backdrop: rgba(0, 0, 0, 0.5);
+  --d-hover: #e8e8e8;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
