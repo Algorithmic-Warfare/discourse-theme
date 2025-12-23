@@ -3039,3 +3039,144 @@ kbd {
     page-break-inside: avoid;
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Hide "Powered by Discourse" Footer
+// ─────────────────────────────────────────────────────────────────────────────
+
+.powered-by-discourse,
+a[href="https://discourse.org/powered-by"],
+footer .powered-by {
+  display: none !important;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Composer / New Topic Dialog
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Main composer container
+#reply-control {
+  background-color: var(--awar-bg-elevated);
+  border-top: 1px solid var(--awar-border);
+
+  // Fullscreen mode
+  &.fullscreen {
+    background-color: var(--awar-bg);
+
+    .reply-area {
+      background-color: var(--awar-bg);
+    }
+  }
+}
+
+// Composer header (title area)
+.reply-details,
+.composer-fields {
+  background-color: var(--awar-bg-elevated);
+
+  .title-input input,
+  .category-chooser,
+  .mini-tag-chooser {
+    background-color: var(--awar-input-bg);
+    border: 1px solid var(--awar-border);
+    color: var(--awar-text);
+
+    &::placeholder {
+      color: var(--awar-text-muted);
+    }
+
+    &:focus {
+      border-color: var(--awar-orange);
+      outline: none;
+    }
+  }
+}
+
+// Reply area container
+.reply-area {
+  background-color: var(--awar-bg-elevated);
+}
+
+// Editor wrapper
+.d-editor {
+  background-color: var(--awar-bg-elevated);
+}
+
+// Editor textarea wrapper
+.d-editor-textarea-wrapper,
+.wmd-controls {
+  background-color: var(--awar-bg-surface) !important;
+  border: 1px solid var(--awar-border) !important;
+}
+
+// Textarea itself
+.d-editor-input,
+textarea.d-editor-input {
+  background-color: var(--awar-bg-surface) !important;
+  color: var(--awar-text) !important;
+  font-family: var(--awar-font);
+  border: none !important;
+
+  &::placeholder {
+    color: var(--awar-text-muted);
+  }
+}
+
+// Preview panel - critical fix
+.d-editor-preview-wrapper,
+.d-editor-preview {
+  background-color: var(--awar-bg-surface) !important;
+  color: var(--awar-text) !important;
+  border-left: 1px solid var(--awar-border);
+  padding: 10px 15px;
+}
+
+// Fullscreen composer background
+.composer-fullscreen-prompt,
+.fullscreen-composer {
+  background-color: var(--awar-bg) !important;
+}
+
+// Composer popup overlay
+.composer-popup {
+  background-color: var(--awar-bg-elevated);
+  border: 1px solid var(--awar-border);
+  color: var(--awar-text);
+}
+
+// Grippie (resize handle)
+.grippie {
+  background-color: var(--awar-bg-surface);
+  border-top: 1px solid var(--awar-border);
+}
+
+// Composer actions footer
+.composer-actions,
+.composer-controls {
+  background-color: var(--awar-bg-elevated);
+  border-top: 1px solid var(--awar-border);
+}
+
+// Submit button
+.create,
+.save-or-cancel .btn-primary {
+  background-color: var(--awar-burgundy) !important;
+  color: var(--awar-text) !important;
+  border: none !important;
+
+  &:hover {
+    background-color: var(--awar-burgundy-hover) !important;
+  }
+}
+
+// Education message panel
+.education-message,
+.composer-popup.education-message {
+  background-color: var(--awar-bg-elevated);
+  border: 1px solid var(--awar-border);
+  color: var(--awar-text);
+
+  strong {
+    color: var(--awar-orange);
+  }
+}
